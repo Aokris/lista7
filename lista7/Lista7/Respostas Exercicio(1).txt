@@ -1,0 +1,69 @@
+Questão 1-
+
+Será imprimido 
+
+"Inside try n
+Exception Caught n
+After catch n"
+
+Questão 2-
+
+Sim o codigo compila e imprime 
+
+"Caught Base Exception"
+
+Questão 3-
+
+Será Impresso
+
+"
+Contructing an object of Test
+Destruting an object of Test
+Caught "
+
+Questão 4-
+
+Será Impresso
+
+"
+Constructing object number 1
+
+Constructing object number 2
+
+Constructing object number 3
+
+Constructing object number 4
+
+Destructing object number 3
+
+Destructing object number 2
+
+Destructing object number 1
+
+Caught 4 "
+
+Questão 5-
+
+O programa terminara pois não há o uso de catch.
+
+Questão 9-
+
+class Exemplo {
+    private:
+        int dado;
+        static int contador;
+    public:
+        Exemplo( int y = 10 ){//Problema na inicialização e na passagem de valor da variavel 'y'
+            dado = y;
+        }
+
+        int getDadoIncremento (){//Ultilização do atributo const não é possivel pois se está alterando o valor ao retornar
+            return dado++;
+        }
+        static int getContador(){
+            return contador;
+        }
+};
+
+
+
