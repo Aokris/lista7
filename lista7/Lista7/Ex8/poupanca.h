@@ -11,7 +11,7 @@ class Poupanca{
         float _saldo;
     
     public:
-        Poupanca(float taxa, float saldo);
+        Poupanca(float saldo);
         float get_saldo();
         static float get_taxa();
         float jurosmensais();

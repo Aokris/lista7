@@ -3,14 +3,15 @@
 
 using namespace std;
 
-Poupanca::Poupanca(float taxa, float saldo){
-    _taxa = taxa;
+float Poupanca::_taxa;
+
+Poupanca::Poupanca(float saldo){
     _saldo = saldo;
 }
 
 float Poupanca::jurosmensais(){
     float jurosmensais;
-    jurosmensais = (_taxa*_saldo)/12;
+    jurosmensais = (_taxa * _saldo)/12;
     return jurosmensais;
 }
 
