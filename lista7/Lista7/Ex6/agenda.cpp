@@ -6,9 +6,9 @@
 
 using namespace std;
 
-Agenda::Agenda(vector<Register> *registro, int num){
-    _registro->resize(_num);
-    _num = 0;
+Agenda::Agenda(int capacidade){
+    _num_cad = 0;
+    _capacidade.resize(capacidade);
 }
 
 Agenda::~Agenda(){
@@ -18,9 +18,10 @@ Agenda::~Agenda(){
 void Agenda::insercao(Register *regis){
     
     try{
-
-    _registro->at(_num) = *regis;
-    _num++;
+    if(_num_cad < _capacidade.size()){
+        _registro->at(_num_cad) = *regis;
+        _num_cad++;
+    }
 
     }catch(exception& e){
         cout<<"ERRO: "<<e.what() << endl;
@@ -31,7 +32,7 @@ Register Agenda::obtencaodecadastro(int posicao){//exceções: se posição for 
     
     vector<Register>::iterator it;
     
-    if(posicao > _num){
+    if(posicao > _capacidade.size()){
         throw overflow_error("Erro: impossivel encontrar o cadastro");
     }
 

@@ -11,12 +11,12 @@ using namespace std;
 class Agenda {
     private:
     vector<Register> *_registro;
-    int _num;
+    vector<int> _capacidade;
+    int _num_cad;
 
     public:
-    Agenda(vector<Register> *registro, int num);
-    ~Agenda();
     Agenda(int capacidade);
+    ~Agenda();
     void insercao(Register *registro);
     Register obtencaodecadastro(int posicao);
 };
