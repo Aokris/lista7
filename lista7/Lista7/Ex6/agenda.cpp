@@ -18,10 +18,10 @@ Agenda::~Agenda(){
 void Agenda::insercao(Register *regis){
     
     try{
-    if(_num_cad < _capacidade.size()){
-        _registro->at(_num_cad) = *regis;
-        _num_cad++;
-    }
+        if(_num_cad < _capacidade.size()){
+            _registro->at(_num_cad) = *regis;
+            _num_cad++;
+        }
 
     }catch(exception& e){
         cout<<"ERRO: "<<e.what() << endl;

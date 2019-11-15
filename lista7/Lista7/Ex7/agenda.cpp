@@ -25,21 +25,14 @@ void Agenda::insercao(Register regis){
     }
 }
 
-/*Register Agenda::obtencaodecadastro(int posicao){//exceções: se posição for maior q o tamanho do vector ou negativa
+Register Agenda::obtencaodecadastro(Register regis){//exceções: se posição for maior q o tamanho do vector ou negativa
     
-    vector<Register>::iterator it;
-    
-    if(posicao > _num){
-        throw overflow_error("Erro: impossivel encontrar o cadastro");
-    }
+    map<Register,int>::iterator it;
 
-    if(posicao < 0){
-        throw invalid_argument("Erro: cadastro nao existente");
+    for(it = _cadastro.begin();it != _cadastro.end();it++){
+        if(it->first == regis ){
+            return it->first;
+        }
     }
-    
-    it = _registro->begin();
-    for(int i = 0; i < posicao; i++){
-        it++;
-    }
-    return *it;
-}*/
+    throw invalid_argument("Erro: cadastro nao existente");
+}

@@ -10,14 +10,13 @@ using namespace std;
 
 class Agenda {
     private:
-    map<Register, int> _cadastro;
+    map<Register,int> _cadastro;
 
     public:
     Agenda(map<Register, int> cadastro);
     ~Agenda();
-    Agenda(int capacidade);
     void insercao(Register regis);
-    //Register obtencaodecadastro(int posicao);
+    Register obtencaodecadastro(Register regis);
 };
 
 #endif
