@@ -30,7 +30,7 @@ Register Agenda::obtencaodecadastro(Register regis){//exceções: se posição f
     map<Register,int>::iterator it;
 
     for(it = _cadastro.begin();it != _cadastro.end();it++){
-        if(it->first == regis ){
+        if(it->first == regis.get_name()){
             return it->first;
         }
     }
