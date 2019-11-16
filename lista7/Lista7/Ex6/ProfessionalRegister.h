@@ -13,6 +13,7 @@ class ProfessionalRegister : public Register{
         string _area;
     public:
         ProfessionalRegister(string name, int cpf, int idade, string profissao, string area);
+        ~ProfessionalRegister(){}
         string get_profissao();
         string get_area();
 };

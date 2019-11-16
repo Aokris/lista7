@@ -13,6 +13,7 @@ class PersonalRegister : public Register{
         int _telefone;
     public:
         PersonalRegister(string name, int cpf, int idade, string endereco, int telefone);
+        ~PersonalRegister(){}
         string get_endereco();
         int get_telefone();
 

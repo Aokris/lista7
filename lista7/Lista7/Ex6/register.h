@@ -13,6 +13,7 @@ class Register{
         int _idade;
     public:
         Register(string name,int cpf, int idade);
+        virtual ~Register(){}
         virtual string get_name();
         virtual int get_cpf();
         virtual int get_idade();

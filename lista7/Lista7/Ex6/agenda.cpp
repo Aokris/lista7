@@ -7,19 +7,21 @@
 using namespace std;
 
 Agenda::Agenda(int capacidade){
-    _num_cad = 0;
-    _capacidade.resize(capacidade);
+        _num_cad = 0;
+        _cadastros.resize(capacidade);
 }
 
 Agenda::~Agenda(){
-	_registro->clear();
+	_cadastros.clear();
 }
 
 void Agenda::insercao(Register *regis){
     
     try{
-        if(_num_cad < _capacidade.size()){
-            _registro->at(_num_cad) = *regis;
+        if(_num_cad == _cadastros.size()){
+            throw("Sem espaço disponivel na Agenda");
+            }else{
+            _cadastros.at(_num_cad) = regis;
             _num_cad++;
         }
 
@@ -28,21 +30,15 @@ void Agenda::insercao(Register *regis){
     }
 }
 
-Register Agenda::obtencaodecadastro(int posicao){//exceções: se posição for maior q o tamanho do vector ou negativa
-    
-    vector<Register>::iterator it;
-    
-    if(posicao > _capacidade.size()){
-        throw overflow_error("Erro: impossivel encontrar o cadastro");
-    }
+Register* Agenda::obtencaodecadastro(int posicao){//exceções: se posição for maior q o tamanho do vector ou negativa
 
-    if(posicao < 0){
-        throw invalid_argument("Erro: cadastro nao existente");
+        Register *regis;
+        
+        try {
+            regis = _cadastros.at(posicao);
+        } catch (exception& e) {
+            cout << e.what() << endl;
+        }
+
+        return regis;
     }
-    
-    it = _registro->begin();
-    for(int i = 0; i < posicao; i++){
-        it++;
-    }
-    return *it;
-}

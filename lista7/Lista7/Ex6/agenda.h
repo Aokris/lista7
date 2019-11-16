@@ -10,15 +10,15 @@ using namespace std;
 
 class Agenda {
     private:
-    vector<Register> *_registro;
-    vector<int> _capacidade;
+    std::vector<Register*> _cadastros;
     int _num_cad;
+    
 
     public:
     Agenda(int capacidade);
     ~Agenda();
     void insercao(Register *registro);
-    Register obtencaodecadastro(int posicao);
+    Register* obtencaodecadastro(int posicao);
 };
 
 #endif
